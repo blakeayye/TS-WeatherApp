@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: 'Noto Sans', 'Exo', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  width: 100%;
+  /* background-color: blue; */
+  padding: 0;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  display: none !important;
+}
+
+code {
+  font-family: 'Noto Sans', 'Exo', sans-serif;
+}
