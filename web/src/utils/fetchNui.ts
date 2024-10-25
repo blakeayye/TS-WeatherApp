@@ -1,32 +1,33 @@
 import { isEnvBrowser } from "./misc"
 
 /**
-* This sends a nui callback to client
-*
-* @param eventName - {string} what the event is {eg. Minigame:End}
-* @param data - {just says uknown idk yet} the data send to the client
-*/
+ * Sends an NUI callback to the backend.
+ *
+ * @param eventName - The name of the event (e.g., "Minigame:End")
+ * @param data - The data to send to the client
+ * @param mockData - Optional mock data for testing in the browser
+ */
 export async function fetchNui<T = unknown>(
   eventName: string,
-  data?: unknown,
-  mockData?: T,
+  data?: Record<string, any>,
+  mockData?: T
 ): Promise<T> {
   const options = {
-    method: "post",
+    method: "POST",
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
     },
     body: JSON.stringify(data),
   };
 
-  if (isEnvBrowser() && mockData) return mockData
+  if (isEnvBrowser() && mockData) return mockData;
 
-  const resourceName = (window as any).GetParentResourceName
-    ? (window as any).GetParentResourceName() : "nui-frame-app"
+  const resourceName = (window as any).GetParentResourceName?.() || "nui-frame-app";
+  const response = await fetch(`https://${resourceName}/${eventName}`, options);
 
-  const resp = await fetch(`https://${resourceName}/${eventName}`, options)
+  if (!response.ok) {
+    throw new Error(`NUI fetch error: ${response.statusText}`);
+  }
 
-  const respFormatted = await resp.json()
-
-  return respFormatted
+  return response.json() as Promise<T>;
 }

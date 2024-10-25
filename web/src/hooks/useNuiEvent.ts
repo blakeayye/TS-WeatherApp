@@ -9,14 +9,14 @@ interface NuiMessageData<T = unknown> {
 type NuiHandlerSignature<T> = (data: T) => void;
 
 /**
-* When you call debugData it'll call the useNuiEvent
-*
-* @param action - {string} what debugData action: string
-* @param data - {} whatever the debugData has itll come through
-*/
+ * Custom hook to listen for NUI events.
+ *
+ * @param action - The action name to listen for (e.g., "Minigame:Update")
+ * @param handler - Callback to handle the data associated with the action
+ */
 export const useNuiEvent = <T = unknown>(
   action: string,
-  handler: (data: T) => void,
+  handler: NuiHandlerSignature<T>
 ) => {
   const savedHandler: MutableRefObject<NuiHandlerSignature<T>> = useRef(noop);
 
@@ -27,11 +27,9 @@ export const useNuiEvent = <T = unknown>(
   useEffect(() => {
     const eventListener = (event: MessageEvent<NuiMessageData<T>>) => {
       const { action: eventAction, data } = event.data;
-      //console.log(eventAction, data);
-      if (savedHandler.current) {
-        if (eventAction === action) {
-          savedHandler.current(data);
-        }
+
+      if (eventAction === action && savedHandler.current) {
+        savedHandler.current(data);
       }
     };
 
