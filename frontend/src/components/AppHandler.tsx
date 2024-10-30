@@ -431,6 +431,7 @@ const AppHandler: React.FC = () => {
                 justifyContent: "flex-start",
                 alignItems: "center",
                 flexDirection: "column",
+                paddingTop: "2vh",
             }}
         >
             <div
