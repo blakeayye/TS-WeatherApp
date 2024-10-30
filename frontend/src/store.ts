@@ -1,10 +1,10 @@
 // src/app/store.ts
 import { configureStore } from "@reduxjs/toolkit";
-import gamesReducer from "./reducers/gamesReducer";
+import weatherReducer from "./reducers/weatherReducer";
 
 export const store = configureStore({
     reducer: {
-        games: gamesReducer,
+        weather: weatherReducer,
     },
 });
 
