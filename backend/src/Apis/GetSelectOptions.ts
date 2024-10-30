@@ -67,7 +67,7 @@ export async function GetSelectOptions(
     }
 }
 
-const API_KEY = '2ce99e00baf94ab7a0d60806a9c54596'; 
+const API_KEY = ''; 
 const API_URL = 'https://api.opencagedata.com/geocode/v1/json?q=';
 const currentTime = Date.now();
 
