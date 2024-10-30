@@ -249,7 +249,6 @@ const AppHandler: React.FC = () => {
 
     const setWeatherData = (data: WeatherDataINT) => {
         setWeatherDT(data);
-        console.log(data);
     };
 
     // Automatically gets the local timezone
@@ -345,7 +344,6 @@ const AppHandler: React.FC = () => {
                 const previousForecast = forecasts[1]; // Get the next forecast
                 const currentForecastTime = new Date(forecast.time).getTime();
                 const previousForecastTime = new Date(previousForecast.time).getTime();
-                console.log(previousForecastTime > currentForecastTime);
                 // If the time of the previous forecast is smaller, return false
                 if (previousForecastTime > currentForecastTime) {
                     return false; // Exclude this forecast
@@ -357,11 +355,6 @@ const AppHandler: React.FC = () => {
         return true;
     });
     
-
-    // Log or process the filtered forecasts
-    console.log("Filtered Forecasts:", finalFilteredForecasts);
-
-    console.log("WEATHERDT", weatherDT)
     if (weatherData.hidden) {
         return (
             <div
@@ -489,12 +482,10 @@ const AppHandler: React.FC = () => {
 
                                     // Check if the hour matches the current hour
                                     if (forecastTimeInTZ === currentHourInLocalTZ) {
-                                        console.log("Forecast time matches the current hour:", forecastTimeInTZ);
-                                        
+
                                         const matchedWeather = weatherTable.find(entry => entry.key === forecast.weather);
 
                                         return (
-                                            console.log(forecastTimeInTZ, sunsetHourInTZ),
                                             <div 
                                                 style={{
                                                     borderRadius: "1vh",
@@ -578,12 +569,10 @@ const AppHandler: React.FC = () => {
                                         hour12: false // Use 24-hour format
                                     });
                                     if (forecastTimeInTZ === currentHourInLocalTZ) {
-                                        console.log("is the same bitchj");
                                         return null;
                                     }
                                     const matchedWeather = weatherTable.find(entry => entry.key === forecast.weather);
-                                    if (!matchedWeather) {console.log(forecast.weather);}
-                                    // Display time formatted in the specified forecast timezone
+
                                     const displayTime = new Intl.DateTimeFormat("en-US", {
                                         hour: "numeric",
                                         minute: "numeric",
