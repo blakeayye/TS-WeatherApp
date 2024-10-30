@@ -2,7 +2,7 @@
 .Input {
     padding: 2vh;
     width: 100%;
-    background: linear-gradient(90deg, rgba(43,148,171,0.2) 0%, rgba(16,48,59,0.8) 50%, rgba(11,30,41,0.8) 100%);
+    background-color: rgba(40, 40, 40, 0.8);
     border-radius: 1vh;
     border: 0;
     box-shadow: none;
