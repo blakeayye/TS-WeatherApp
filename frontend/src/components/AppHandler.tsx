@@ -20,16 +20,22 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 
 library.add(fab, fas);
 
-import Sun from '/src/assets/svgs/sun.svg';
-import Cloud from '/src/assets/svgs/cloud.svg';
-import CloudSnow from '/src/assets/svgs/cloudSnow.svg';
-import Fog from '/src/assets/svgs/fog.svg';
-import Rain from '/src/assets/svgs/rain.svg';
-import Snow from '/src/assets/svgs/snow.svg';
-import SunCloud from '/src/assets/svgs/sunCloud.svg';
-import ThunderStorm from '/src/assets/svgs/thunderStorm.svg';
-import SunRise from '/src/assets/svgs/sunRise.svg';
-import SunSet from '/src/assets/svgs/sunSet.svg';
+
+import Cloud from '/src/assets/svgs/cloudy.svg';
+import Fog from '/src/assets/svgs/weather_sagittarius.svg';
+
+import DayRain from '/src/assets/svgs/rainy-3.svg';
+import NightRain from '/src/assets/svgs/rainy-6.svg';
+
+import DaySnow from '/src/assets/svgs/snowy-3.svg';
+import NightSnow from '/src/assets/svgs/snowy-6.svg';
+
+import DayCloud from '/src/assets/svgs/cloudy-day-1.svg';
+import NightCloud from '/src/assets/svgs/cloudy-night-1.svg';
+
+import ThunderStorm from '/src/assets/svgs/thunder.svg';
+import Sun from '/src/assets/svgs/day.svg';
+import Moon from '/src/assets/svgs/night.svg';
 
 export interface WeatherDataINT {
     name: string;
@@ -68,14 +74,14 @@ const weatherTable: weatherTableType[] = [
     {
         key: 1,
         name: 'Mainly Clear',
-        daySvg: SunCloud,
-        nightSvg: SunCloud,
+        daySvg: DayCloud,
+        nightSvg: NightCloud,
     },
     {
         key: 2,
         name: 'Partly Cloudy',
-        daySvg: SunCloud,
-        nightSvg: SunCloud,
+        daySvg: DayCloud,
+        nightSvg: NightCloud,
     },
     {
         key: 3,
@@ -98,116 +104,116 @@ const weatherTable: weatherTableType[] = [
     {
         key: 51,
         name: 'Drizzle Light',
-        daySvg: Rain,
-        nightSvg: Rain,
+        daySvg: DayRain,
+        nightSvg: NightRain,
     },
     {
         key: 53,
         name: 'Drizzle Moderate',
-        daySvg: Rain,
-        nightSvg: Rain,
+        daySvg: DayRain,
+        nightSvg: NightRain,
     },
     {
         key: 55,
         name: 'Drizzle Dense',
-        daySvg: Rain,
-        nightSvg: Rain,
+        daySvg: DayRain,
+        nightSvg: NightRain,
     },
     {
         key: 56,
         name: 'Freezing Drizzle Slight',
-        daySvg: CloudSnow,
-        nightSvg: CloudSnow,
+        daySvg: DaySnow,
+        nightSvg: NightSnow,
     },
     {
         key: 57,
         name: 'Freezing Drizzle Dense',
-        daySvg: CloudSnow,
-        nightSvg: CloudSnow,
+        daySvg: DaySnow,
+        nightSvg: NightSnow,
     },
     {
         key: 61,
         name: 'Rain Light',
-        daySvg: Rain,
-        nightSvg: Rain,
+        daySvg: DayRain,
+        nightSvg: NightRain,
     },
     {
         key: 63,
         name: 'Rain Moderate',
-        daySvg: Rain,
-        nightSvg: Rain,
+        daySvg: DayRain,
+        nightSvg: NightRain,
     },
     {
         key: 65,
         name: 'Rain Heavy',
-        daySvg: Rain,
-        nightSvg: Rain,
+        daySvg: DayRain,
+        nightSvg: NightRain,
     },
     {
         key: 66,
         name: 'Drizzle Heavy',
-        daySvg: CloudSnow,
-        nightSvg: CloudSnow,
+        daySvg: DaySnow,
+        nightSvg: NightSnow,
     },
     {
         key: 67,
         name: 'Drizzle Heavy',
-        daySvg: CloudSnow,
-        nightSvg: CloudSnow,
+        daySvg: NightSnow,
+        nightSvg: NightSnow,
     },
     {
         key: 71,
         name: 'Snow Fall Slight',
-        daySvg: Snow,
-        nightSvg: Snow,
+        daySvg: DaySnow,
+        nightSvg: NightSnow,
     },
     {
         key: 73,
         name: 'Snow Fall Moderate',
-        daySvg: Snow,
-        nightSvg: Snow,
+        daySvg: DaySnow,
+        nightSvg: NightSnow,
     },
     {
         key: 75,
         name: 'Snow Fall Heavy',
-        daySvg: Snow,
-        nightSvg: Snow,
+        daySvg: DaySnow,
+        nightSvg: NightSnow,
     },
     {
         key: 77,
         name: 'Snow Grains',
-        daySvg: Snow,
-        nightSvg: Snow,
+        daySvg: DaySnow,
+        nightSvg: NightSnow,
     },
     {
         key: 80,
-        name: 'Rain Showers Slight',
-        daySvg: Rain,
-        nightSvg: Rain,
+        name: 'Light Rain',
+        daySvg: DayRain,
+        nightSvg: NightRain,
     },
     {
         key: 81,
-        name: 'Rain Showers Moderate',
-        daySvg: Rain,
-        nightSvg: Rain,
+        name: 'Moderate Rain',
+        daySvg: DayRain,
+        nightSvg: NightRain,
     },
     {
         key: 82,
-        name: 'Rain Showers Violent',
-        daySvg: Rain,
-        nightSvg: Rain,
+        name: 'Heavy Rain',
+        daySvg: DayRain,
+        nightSvg: NightRain,
     },
     {
         key: 85,
-        name: 'Snow Showers Slight',
-        daySvg: CloudSnow,
-        nightSvg: CloudSnow,
+        name: 'Light Snow',
+        daySvg: DaySnow,
+        nightSvg: NightSnow,
     },
     {
         key: 86,
-        name: 'Snow Showers Heavy',
-        daySvg: CloudSnow,
-        nightSvg: CloudSnow,
+        name: 'Heavy Snow',
+        daySvg: DaySnow,
+        nightSvg: NightSnow,
     },
     {
         key: 95,
@@ -217,27 +223,27 @@ const weatherTable: weatherTableType[] = [
     },
     {
         key: 96,
-        name: 'Thunderstorm Slight Hail',
+        name: 'Hail Thunderstorm',
         daySvg: ThunderStorm,
         nightSvg: ThunderStorm,
     },
     {
         key: 99,
-        name: 'Thunderstorm Heavy Hail',
+        name: 'Hail Thunderstorm',
         daySvg: ThunderStorm,
         nightSvg: ThunderStorm,
     },
     {
         key: 998,
         name: 'Sun Rise',
-        daySvg: SunRise,
-        nightSvg: SunRise,
+        daySvg: Sun,
+        nightSvg: Sun,
     },
     {
         key: 999,
         name: 'Sun Set',
-        daySvg: SunSet,
-        nightSvg: SunSet,
+        daySvg: Moon,
+        nightSvg: Moon,
     },
 ];
 
@@ -468,8 +474,6 @@ const AppHandler: React.FC = () => {
                     >
                         {weatherDT.name}
                     </div>
-
-                   
                         {weatherDT && weatherDT.forcast ? (
                             <>
                                 {/* Map for the forecast matching the current hour */}
@@ -491,53 +495,110 @@ const AppHandler: React.FC = () => {
                                                     borderRadius: "1vh",
                                                     width: "75%",
                                                     height: "20%",
-                                                    backgroundColor: "yellow",
+                                                    //backgroundColor: "yellow",
                                                     fontSize: "1.5vh",
                                                     display: "flex",
-                                                    justifyContent: "space-evenly",
+                                                    justifyContent: "center",
                                                     alignItems: "center",
                                                     flexDirection: "row",
                                                     border: `0.1vh solid rgba(138, 138, 138, 0.7)`,
-                                                    
                                                 }}
                                                 key={forecast.time}
                                             >
-                                                <p>Now</p>
-                                                <p>{forecast.temperature} °{weatherData.temp}</p>
-                                                <p>{matchedWeather?.name}</p>
-                                                {
-                                                    forecastTimeInTZ > sunsetHourInTZ ? (
-                                                        matchedWeather?.nightSvg && (
-                                                            <matchedWeather.nightSvg 
-                                                                height="100%"
-                                                                width="100%"
-                                                                style={{
-                                                                    color: "white",
-                                                                }}
-                                                            />
+                                                <div
+                                                    style={{
+                                                        flex: "1 1 20%",
+                                                        height: "100%",
+                                                        display: "flex",
+                                                        flexDirection: "column",
+                                                        justifyContent: "center",
+                                                        alignItems: "center",
+                                                        //backgroundColor: "orange",
+                                                        textAlign: "center",
+                                                    }}
+                                                >   
+                                                    <p style={{margin: 0, padding: 0, color: "rgba(12, 71, 122, 1)"}}>Time:</p>
+                                                    Now
+                                                </div>
+
+                                                <div
+                                                    style={{
+                                                        flex: "1 1 20%",
+                                                        height: "100%",
+                                                        display: "flex",
+                                                        flexDirection: "column",
+                                                        justifyContent: "center",
+                                                        alignItems: "center",
+                                                        //backgroundColor: "orange",
+                                                        textAlign: "center",
+                                                    }}
+                                                >
+                                                    <p style={{margin: 0, padding: 0, color: "rgba(191, 204, 94, 1)"}}>Temperature:</p>
+                                                    {forecast.temperature} °{weatherData.temp}
+                                                </div>
+
+                                                <div
+                                                    style={{
+                                                        flex: "1 1 20%",
+                                                        height: "100%",
+                                                        display: "flex",
+                                                        flexDirection: "column",
+                                                        justifyContent: "center",
+                                                        alignItems: "center",
+                                                        //backgroundColor: "orange",
+                                                        textAlign: "center",
+                                                    }}
+                                                >
+                                                    <p style={{margin: 0, padding: 0, color: "rgba(113, 89, 201, 1)"}}>Weather:</p>
+                                                    {matchedWeather?.name}
+                                                </div>
+
+                                                <div
+                                                    style={{
+                                                        flex: "1 1 20%",
+                                                        height: "100%",
+                                                        display: "flex",
+                                                        flexDirection: "column",
+                                                        justifyContent: "center",
+                                                        alignItems: "center",
+                                                        //backgroundColor: "orange",
+                                                        textAlign: "center",
+                                                    }}
+                                                >
+                                                    {
+                                                        forecastTimeInTZ > sunsetHourInTZ ? (
+                                                            matchedWeather?.nightSvg && (
+                                                                <matchedWeather.nightSvg 
+                                                                    height="100%"
+                                                                    width="100%"
+                                                                    style={{
+                                                                        color: "white",
+                                                                    }}
+                                                                />
+                                                            )
+                                                        ) : forecastTimeInTZ < sunriseHourInTZ ? (
+                                                            matchedWeather?.nightSvg && (
+                                                                <matchedWeather.nightSvg 
+                                                                    height="100%"
+                                                                    width="100%"
+                                                                    style={{
+                                                                        color: "white",
+                                                                    }}
+                                                                />
+                                                            )
+                                                        ) : (
+                                                            matchedWeather?.daySvg && (
+                                                                <matchedWeather.daySvg 
+                                                                    height="100%"
+                                                                    width="100%"
+                                                                    style={{
+                                                                        color: "white",
+                                                                    }}
+                                                                />
+                                                            )
                                                         )
-                                                    ) : forecastTimeInTZ < sunriseHourInTZ ? (
-                                                        matchedWeather?.nightSvg && (
-                                                            <matchedWeather.nightSvg 
-                                                                height="100%"
-                                                                width="100%"
-                                                                style={{
-                                                                    color: "white",
-                                                                }}
-                                                            />
-                                                        )
-                                                    ) : (
-                                                        matchedWeather?.daySvg && (
-                                                            <matchedWeather.daySvg 
-                                                                height="100%"
-                                                                width="100%"
-                                                                style={{
-                                                                    color: "white",
-                                                                }}
-                                                            />
-                                                        )
-                                                    )
-                                                }
+                                                    }
+                                                </div>
                                             </div>
                                         );
                                     }
@@ -592,6 +653,10 @@ const AppHandler: React.FC = () => {
                                                 flexDirection: "column",
                                                 border: `0.1vh solid rgba(138, 138, 138, 0.7)`,
                                                 scrollSnapAlign: "start",
+                                                backgroundImage: 
+                                                    forecast.weather === 998 ? "linear-gradient(0deg, rgba(255,167,0,0.725) 0%, rgba(255,193,0,0.812) 45%, rgba(255,255,255,0.8) 100%)" 
+                                                    : forecast.weather === 999 ? "linear-gradient(0deg, rgba(52,0,255,0.725) 0%, rgba(0,120,255,0.812) 45%, rgba(255,255,255,0.8) 100%)" 
+                                                    : "none",
                                             }}
                                             key={forecast.time}
                                         >
@@ -641,12 +706,6 @@ const AppHandler: React.FC = () => {
                         ) : (
                             <p>Loading weather data...</p>
                         )}
-
-
-
-
-
-                    
                 </div>
             )}
         </div>
