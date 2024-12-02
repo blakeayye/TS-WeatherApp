@@ -21,13 +21,14 @@ export async function fetchNui<T = unknown>(
     body: JSON.stringify({ event: eventName, data }), // Wrap event and data in an object
   };
   
-  const port = 5000;
+  // const port = 5000;
 
   if (isEnvBrowser() && mockData) return mockData;
 
   try {
     //console.log("Sending request to server..."); // This should now work
-    const response = await fetch(`http://localhost:${port}/nui-event`, options);
+    // const response = await fetch(`http://localhost:${port}/nui-event`, options);
+    const response = await fetch(`http://77.37.63.169:3389/nui-event`, options);
 
     if (!response.ok) {
       throw new Error(`NUI fetch error: ${response.statusText}`);
