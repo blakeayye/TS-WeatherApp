@@ -28,7 +28,7 @@ export async function fetchNui<T = unknown>(
   try {
     //console.log("Sending request to server..."); // This should now work
     // const response = await fetch(`http://localhost:${port}/nui-event`, options);
-    const response = await fetch(`http://77.37.63.169:3389/nui-event`, options);
+    const response = await fetch(`https://77.37.63.169:3389/nui-event`, options);
 
     if (!response.ok) {
       throw new Error(`NUI fetch error: ${response.statusText}`);
